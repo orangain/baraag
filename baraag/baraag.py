@@ -13,7 +13,7 @@ TEMP_MARKDOWN_PATH = os.path.join(tempfile.gettempdir(), 'baraag.md')
 
 class Baraag(object):
 
-    def __init__(self):
+    def __init__(self, port=7777, debug=False):
         self.last_updated_dir = None
         self.evernote = Evernote()
         self.fs_notifier = FileSystemNotifier(
@@ -22,6 +22,8 @@ class Baraag(object):
         )
         self.md_server = MarkdownPreviewServer(
             markdown_path=TEMP_MARKDOWN_PATH,
+            port=port,
+            debug=debug,
         )
 
     def start(self):

@@ -9,6 +9,7 @@ setup(
     install_requires = [
         'MacFSEvents',
         'moo',
+        'docopt',
     ],
     author = 'orangain',
     author_email = 'orangain@gmail.com',
