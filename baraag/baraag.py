@@ -27,9 +27,23 @@ class Baraag(object):
         )
 
     def start(self):
+        self.ensure_temp_markdown()
         signal.signal(signal.SIGALRM, self.deferred_directory_changed)
         self.fs_notifier.start()
         self.md_server.start() # wait until the md_server terminated
+
+    def ensure_temp_markdown(self):
+        # Should I always override temp file when baraag starting?
+        if not os.path.exists(TEMP_MARKDOWN_PATH):
+            logging.debug('Creating welcome message in %s' % TEMP_MARKDOWN_PATH)
+            with open(TEMP_MARKDOWN_PATH, 'w') as f:
+                f.write("""
+# Welcome to Baraag!
+
+Try write and save a note in Markdown format with Evernote.app.
+
+EvernoteアプリでMarkdown形式のノートを書いて保存してみてください。
+""")
 
     def shutdown(self):
         self.fs_notifier.shutdown()
