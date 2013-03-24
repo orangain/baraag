@@ -16,8 +16,14 @@ class Baraag(object):
     def __init__(self, port=7777, debug=False):
         self.last_updated_dir = None
         self.evernote = Evernote()
+
+        content_dirs = self.evernote.get_content_dirs()
+        if len(content_dirs) == 0:
+            logging.error('Evernote content directory not found!')
+            raise IOError('Evernote content directory not found!')
+
         self.fs_notifier = FileSystemNotifier(
-            target_dir=self.evernote.get_content_dir(),
+            target_dirs=content_dirs,
             callback=self.directory_changed,
         )
         self.md_server = MarkdownPreviewServer(

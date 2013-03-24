@@ -12,8 +12,8 @@ class Evernote(object):
     def __init__(self):
         pass
 
-    def get_content_dir(self):
-        return glob(os.path.join(os.environ['HOME'], 'Library/Containers/com.evernote.Evernote/Data/Library/Application Support/Evernote/accounts/Evernote/*/content/'))[0]
+    def get_content_dirs(self):
+        return glob(os.path.join(os.environ['HOME'], 'Library/Containers/com.evernote.Evernote/Data/Library/Application Support/Evernote/accounts/Evernote/*/content/'))
 
     def convert_to_markdown(self, note_dir, output, img_url_prefix):
         enml_path = os.path.join(note_dir, 'content.enml')

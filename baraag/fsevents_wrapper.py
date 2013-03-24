@@ -9,12 +9,12 @@ from fsevents import Observer, Stream
 
 class FileSystemNotifier(object):
 
-    def __init__(self, target_dir, callback):
-        self.target_dir = target_dir
+    def __init__(self, target_dirs, callback):
+        self.target_dirs = target_dirs
         self.callback = callback
 
     def start(self):
-        self.stream = Stream(self.directory_changed, self.target_dir)
+        self.stream = Stream(self.directory_changed, *self.target_dirs)
 
         self.observer = Observer()
         self.observer.schedule(self.stream)
