@@ -1,6 +1,12 @@
 #coding: utf-8
 
+import os
+
 from setuptools import setup, find_packages
+
+def read(filename):
+    with open(os.path.join(os.path.dirname(__file__), filename)) as f:
+        return f.read()
 
 setup(
     name = 'baraag',
@@ -13,9 +19,11 @@ setup(
     ],
     author = 'orangain',
     author_email = 'orangain@gmail.com',
+    license = "MIT",
+    platforms = ["Mac OS X"],
     url = 'https://github.com/orangain/baraag',
-    long_description = open('README.md').read(),
-    keywords = 'evernote markdown preview',
+    long_description = read('README.md'),
+    keywords = ['evernote', 'markdown', 'preview'],
     entry_points = {
         'console_scripts': [
             'baraag = baraag.cmdline:main',
