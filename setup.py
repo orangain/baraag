@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'Baraag',
+    name = 'baraag',
     version = '0.1dev',
     packages = find_packages(),
     install_requires = [
