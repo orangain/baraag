@@ -15,6 +15,11 @@ setup(
     url = 'https://github.com/orangain/baraag',
     long_description = open('README.md').read(),
     keywords = 'evernote markdown preview',
+    entry_points = {
+        'console_scripts': [
+            'baraag = baraag.cmdline:main',
+        ],
+    },
     classifiers = [
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: MIT License',
