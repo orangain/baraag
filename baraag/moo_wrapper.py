@@ -1,5 +1,7 @@
 #coding: utf-8
 
+from __future__ import print_function
+
 import re
 import logging
 import inspect
@@ -37,16 +39,16 @@ class MarkdownPreviewServer(object):
     return run_app
         """, build_app_source) # indent is IMPORTANT!
 
-        #print build_app_source
-        exec build_app_source # defines function 'build_app' which returns function
+        #print(build_app_source)
+        exec(build_app_source) # defines function 'build_app' which returns function
 
         try:
             open_local_url(self.port)
         except:
             pass
 
-        print 'Preview on http://127.0.0.1:%d' % self.port
-        print 'Hit Ctrl-C to quit.'
+        print('Preview on http://127.0.0.1:%d' % self.port)
+        print('Hit Ctrl-C to quit.')
 
         app = build_app(
                 filename=self.markdown_path, port=self.port,

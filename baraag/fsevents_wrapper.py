@@ -1,5 +1,7 @@
 #coding: utf-8
 
+from __future__ import print_function
+
 import logging
 
 from fsevents import Observer, Stream
@@ -52,4 +54,4 @@ if __name__ == '__main__':
         ('X_Unmount', 0x80),
     )
 
-    print '\n'.join("%s:\t0x%x" % (k, v) for k, v in flags)
+    print('\n'.join("%s:\t0x%x" % (k, v) for k, v in flags))

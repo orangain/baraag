@@ -1,5 +1,7 @@
 #coding: utf-8
 
+from __future__ import print_function
+
 import sys
 import os
 from xml import sax
@@ -39,7 +41,7 @@ class EnmlMarkdownConverter(sax.handler.ContentHandler):
         self.fragments.append(text)
 
     def startElement(self, name, attrs):
-        #print name, attrs
+        #print(name, attrs)
 
         if name == 'br':
             self.append('\n')
