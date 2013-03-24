@@ -10,7 +10,7 @@ Installation
 $ pip install baraag
 ```
 
-Baraag is tested with Python 2.7 on Mac OS X Lion and Mountain Lion.
+Baraag is tested with Python 2.7 on Mac OS X 10.7+ (Lion and Mountain Lion).
 
 Usage
 -----
@@ -18,14 +18,25 @@ Usage
 $ baraag
 ```
 
-Then, write note in Markdown with Evernote app. You will see a formatted note in your browser.
+Then, write and save a note in Markdown with Evernote app. You will see a formatted note in your browser.
+The preview is automatically reloaded when you save a note.
+
+Dependency
+----------
+Special thanks to these libraries:
+
+- [moo](https://github.com/metaphysiks/moo)
+- [macfsevents](https://github.com/malthe/macfsevents)
+- [docopt](https://github.com/docopt/docopt)
+
+Dependencies are automatically resolved.
 
 Lisense
 -------
-Baraag is distributed under the MIT lisense.
+Baraag is distributed under the MIT Lisense.
 
 
-Copyright (c) 2013 orangain <orangain@gmail.com>
+Copyright (c) 2013 orangain &lt;orangain@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
