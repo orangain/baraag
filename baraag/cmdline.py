@@ -1,10 +1,12 @@
 #coding: utf-8
 
+from __future__ import absolute_import
+
 import logging
 
-def main():
+from baraag.baraag import Baraag
 
-    from baraag.baraag import Baraag
+def main():
 
     logging.basicConfig(level=logging.DEBUG,
         format='%(asctime)s %(levelname)-8s %(message)s',
@@ -16,6 +18,4 @@ def main():
     baraag.shutdown()
 
 if __name__ == '__main__':
-    import sys, os
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     main()
