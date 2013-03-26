@@ -1,7 +1,7 @@
 #coding: utf-8
 
 """
-Baraag, small server to preview Markdown-formatted note in Evernote with browser.
+Baraag, a small markdown preview server work with Evernote.app in Mac OS X.
 
 Usage:
     baraag [options]

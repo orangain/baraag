@@ -23,13 +23,13 @@ The preview is automatically reloaded when you save a note.
 
 Dependency
 ----------
-Special thanks to these libraries:
+I appreciate these libraries:
 
 - [moo](https://github.com/metaphysiks/moo)
 - [macfsevents](https://github.com/malthe/macfsevents)
 - [docopt](https://github.com/docopt/docopt)
 
-Dependencies are automatically resolved.
+Dependencies will be resolved automatically.
 
 Lisense
 -------
