@@ -10,12 +10,30 @@ from glob import glob
 class Evernote(object):
 
     def __init__(self):
-        pass
+        self.find_note_dirs()
 
-    def get_content_dirs(self):
-        return glob(os.path.join(os.environ['HOME'], 'Library/Containers/com.evernote.Evernote/Data/Library/Application Support/Evernote/accounts/Evernote/*/content/'))
+    def find_note_dirs(self):
+        # Evernote app from App Store
+        base_dir = os.path.join(os.environ['HOME'],
+                'Library/Containers/com.evernote.Evernote/Data/Library/' +
+                'Application Support/Evernote/accounts/Evernote/')
+        content_dirs = glob(os.path.join(base_dir, '*/content/'))
 
-    def convert_to_markdown(self, note_dir, output, img_url_prefix):
+        if content_dirs:
+            self.base_dir = base_dir
+            self.content_dirs = content_dirs
+            return
+
+        # Not found. Maybe not installed
+        self.base_dir = None
+        self.content_dirs = []
+
+    def convert_to_markdown(self, note_dir, output, img_dir_url):
+        if not note_dir.startswith(self.base_dir):
+            raise IOError('Invalid note_dir: %s' % note_dir)
+
+        img_url_prefix = img_dir_url + note_dir[len(self.base_dir):]
+
         enml_path = os.path.join(note_dir, 'content.enml')
         self.enml_to_markdown(open(enml_path), output, img_url_prefix)
 
@@ -47,7 +65,7 @@ class EnmlMarkdownConverter(sax.handler.ContentHandler):
             self.append('\n')
         elif name == 'en-media':
             ext = attrs['type'].split('/')[1]
-            file_uri = '%s/%s.%s' % (self.img_url_prefix, attrs['hash'], ext)
+            file_uri = '%s%s.%s' % (self.img_url_prefix, attrs['hash'], ext)
             self.append('![](%s)' % file_uri)
 
     def characters(self, content):
