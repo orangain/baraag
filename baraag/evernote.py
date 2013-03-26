@@ -24,6 +24,16 @@ class Evernote(object):
             self.content_dirs = content_dirs
             return
 
+        # Evernote app from Evernote's Web site?
+        base_dir = os.path.join(os.environ['HOME'],
+                'Library/Application Support/Evernote/accounts/Evernote/')
+        content_dirs = glob(os.path.join(base_dir, '*/content/'))
+
+        if content_dirs:
+            self.base_dir = base_dir
+            self.content_dirs = content_dirs
+            return
+
         # Not found. Maybe not installed
         self.base_dir = None
         self.content_dirs = []
