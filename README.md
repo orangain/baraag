@@ -3,6 +3,8 @@ Baraag
 
 Baraag is a small server to preview Markdown-formatted note in Evernote with browser.
 
+![Baraag](http://dl.dropbox.com/u/244073/baraag.png)
+
 Installation
 ------------
 
@@ -20,6 +22,8 @@ $ baraag
 
 Then, write and save a note in Markdown with Evernote app. You will see a formatted note in your browser.
 The preview is automatically reloaded when you save a note.
+
+![Baraag](http://dl.dropbox.com/u/244073/baraag_screenshot.png)
 
 Dependency
 ----------
