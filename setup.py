@@ -17,6 +17,7 @@ setup(
         'moo',
         'docopt',
     ],
+    test_suite = 'baraag.tests',
     author = 'orangain',
     author_email = 'orangain@gmail.com',
     license = "MIT",

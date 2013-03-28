@@ -45,16 +45,18 @@ class Evernote(object):
         img_url_prefix = img_dir_url + note_dir[len(self.base_dir):]
 
         enml_path = os.path.join(note_dir, 'content.enml')
-        self.enml_to_markdown(open(enml_path), output, img_url_prefix)
+        enml_to_markdown(open(enml_path), output, img_url_prefix)
 
-    def enml_to_markdown(self, input, output, img_url_prefix):
-        converter = EnmlMarkdownConverter(img_url_prefix)
-        parser = sax.make_parser()
-        parser.setContentHandler(converter)
-        parser.setFeature(sax.handler.feature_external_ges, False)
-        parser.parse(input)
 
-        output.write(converter.text.encode('utf-8'))
+def enml_to_markdown(input, output, img_url_prefix):
+    converter = EnmlMarkdownConverter(img_url_prefix)
+    parser = sax.make_parser()
+    parser.setContentHandler(converter)
+    parser.setFeature(sax.handler.feature_external_ges, False)
+    parser.parse(input)
+
+    # should I use strip() rather than rstrip()?
+    output.write(converter.text.encode('utf-8').rstrip())
 
 
 class EnmlMarkdownConverter(sax.handler.ContentHandler):
@@ -69,11 +71,15 @@ class EnmlMarkdownConverter(sax.handler.ContentHandler):
         self.fragments.append(text)
 
     def startElement(self, name, attrs):
+        """
+        Note:
+        As ENML contiains trailing newline per line,
+        there's no need to care <br> when converting.
+        """
+
         #print(name, attrs)
 
-        if name == 'br':
-            self.append('\n')
-        elif name == 'en-media':
+        if name == 'en-media':
             ext = attrs['type'].split('/')[1]
             file_uri = '%s%s.%s' % (self.img_url_prefix, attrs['hash'], ext)
             self.append('![](%s)' % file_uri)
