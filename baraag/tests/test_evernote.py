@@ -3,7 +3,7 @@
 import os
 import re
 from unittest import TestCase
-from io import StringIO
+from io import BytesIO
 
 from baraag.evernote import enml_to_markdown
 
@@ -27,7 +27,7 @@ class TestEnmlToMarkdown(TestCase):
 
         with open(enml_path) as enml_file, open(expected_md_path) as expected_file:
 
-            converted = StringIO()
+            converted = BytesIO()
             enml_to_markdown(enml_file, converted, '/images/')
 
             self.assertEqual(converted.getvalue(), expected_file.read().rstrip())
