@@ -47,7 +47,7 @@ setup(
     version = '0.1dev',
     packages = find_packages(),
     package_data = {
-        'baraag': ['tests/*.md', 'tests/*.enml'],
+        'baraag': ['tests/fixtures/*.md', 'tests/fixtures/*.enml'],
     },
     install_requires = [
         'MacFSEvents',
