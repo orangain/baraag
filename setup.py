@@ -46,6 +46,9 @@ setup(
     name = 'baraag',
     version = '0.1dev',
     packages = find_packages(),
+    package_data = {
+        'baraag': ['tests/*.md', 'tests/*.enml'],
+    },
     install_requires = [
         'MacFSEvents',
         'moo',
