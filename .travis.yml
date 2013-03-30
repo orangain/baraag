@@ -6,4 +6,4 @@ python:
 install:
  - pip install --no-deps -e .
 script:
- - python -m unittest baraag.tests.test_evernote
+ - python -m baraag.tests.runner
