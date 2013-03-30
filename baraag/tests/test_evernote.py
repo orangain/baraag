@@ -3,7 +3,7 @@
 import os
 import re
 from unittest import TestCase
-from io import BytesIO
+from io import BytesIO, open
 
 from baraag.evernote import enml_to_markdown
 
@@ -25,7 +25,7 @@ class TestEnmlToMarkdown(TestCase):
         enml_path = os.path.join(FIXTURES_DIR, '%s_content.enml' % fixture)
         expected_md_path = re.sub(r'enml$', 'md', enml_path)
 
-        with open(enml_path) as enml_file, open(expected_md_path) as expected_file:
+        with open(enml_path, 'rb') as enml_file, open(expected_md_path, 'rb') as expected_file:
 
             converted = BytesIO()
             enml_to_markdown(enml_file, converted, '/images/')
