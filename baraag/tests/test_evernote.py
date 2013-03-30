@@ -3,7 +3,7 @@
 import os
 import re
 from unittest import TestCase
-from cStringIO import StringIO
+from io import StringIO
 
 from baraag.evernote import enml_to_markdown
 
