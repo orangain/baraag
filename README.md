@@ -1,7 +1,5 @@
-Baraag
-======
-
-[![Build Status](https://travis-ci.org/orangain/baraag.png)](https://travis-ci.org/orangain/baraag)
+Baraag [![Build Status](https://travis-ci.org/orangain/baraag.png)](https://travis-ci.org/orangain/baraag)
+==========================================================================================================
 
 Baraag is a small server to preview Markdown-formatted note in Evernote with browser.
 
