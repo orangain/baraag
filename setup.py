@@ -44,7 +44,7 @@ I appreciate these libraries:
 
 setup(
     name = 'baraag',
-    version = '0.1dev',
+    version = '0.1',
     packages = find_packages(),
     package_data = {
         'baraag': ['tests/fixtures/*.md', 'tests/fixtures/*.enml'],
@@ -69,7 +69,7 @@ setup(
         ],
     },
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
         'Intended Audience :: End Users/Desktop',
