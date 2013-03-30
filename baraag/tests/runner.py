@@ -2,8 +2,6 @@
 
 import unittest
 
-import baraag.tests
-
 TEST_MODULES = [
     'baraag.tests.test_evernote',
 ]
