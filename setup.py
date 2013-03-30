@@ -4,9 +4,43 @@ import os
 
 from setuptools import setup, find_packages
 
-def read(filename):
-    with open(os.path.join(os.path.dirname(__file__), filename)) as f:
-        return f.read()
+long_description = """
+Baraag
+======
+
+Baraag is a small server to preview Markdown-formatted note in Evernote
+with browser.
+
+Installation
+------------
+
+::
+
+    $ pip install baraag
+
+Baraag is tested with Python 2.7 on Mac OS X 10.7+ (Lion and Mountain
+Lion).
+
+Usage
+-----
+
+::
+
+    $ baraag
+
+Then, write and save a note in Markdown with Evernote app. You will see
+a formatted note in your browser. The preview is automatically reloaded
+when you save a note.
+
+Dependency
+----------
+
+I appreciate these libraries:
+
+-  `moo <https://github.com/metaphysiks/moo>`__
+-  `macfsevents <https://github.com/malthe/macfsevents>`__
+-  `docopt <https://github.com/docopt/docopt>`__
+"""
 
 setup(
     name = 'baraag',
@@ -24,7 +58,7 @@ setup(
     platforms = ["Mac OS X"],
     url = 'https://github.com/orangain/baraag',
     description = 'Markdown preview server work with Evernote in Mac',
-    long_description = read('README.md'),
+    long_description = long_description,
     keywords = ['evernote', 'markdown', 'preview'],
     entry_points = {
         'console_scripts': [
