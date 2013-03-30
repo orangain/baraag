@@ -1,1 +1,1 @@
-include *.md
+global-include *.md *.enml
