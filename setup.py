@@ -23,6 +23,7 @@ setup(
     license = "MIT",
     platforms = ["Mac OS X"],
     url = 'https://github.com/orangain/baraag',
+    description = 'Markdown preview server work with Evernote in Mac',
     long_description = read('README.md'),
     keywords = ['evernote', 'markdown', 'preview'],
     entry_points = {
@@ -38,6 +39,7 @@ setup(
         'Operating System :: MacOS :: MacOS X',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Topic :: Utilities',
     ],
 )
