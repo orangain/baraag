@@ -44,7 +44,7 @@ I appreciate these libraries:
 
 setup(
     name = 'baraag',
-    version = '0.1',
+    version = '0.2',
     packages = find_packages(),
     package_data = {
         'baraag': ['tests/fixtures/*.md', 'tests/fixtures/*.enml'],

@@ -21,7 +21,7 @@ from docopt import docopt
 from baraag.baraag import Baraag
 
 def main():
-    options = docopt(__doc__, version='0.1')
+    options = docopt(__doc__, version='0.2')
 
     port = int(options['--port'])
 
