@@ -40,9 +40,11 @@ class Baraag(object):
         self.md_server.start() # wait until the md_server terminated
 
     def ensure_temp_markdown(self):
+        logging.debug('Tempfile location: %s' % TEMP_MARKDOWN_PATH)
+
         # Should I always override temp file when baraag starting?
         if not os.path.exists(TEMP_MARKDOWN_PATH):
-            logging.debug('Creating welcome message in %s' % TEMP_MARKDOWN_PATH)
+            logging.debug('Creating welcome message')
             with open(TEMP_MARKDOWN_PATH, 'w') as f:
                 f.write("""
 # Welcome to Baraag!
