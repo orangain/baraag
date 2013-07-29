@@ -55,8 +55,11 @@ def enml_to_markdown(input, output, img_url_prefix):
     parser.setFeature(sax.handler.feature_external_ges, False)
     parser.parse(input)
 
-    # should I use strip() rather than rstrip()?
-    output.write(converter.text.encode('utf-8').rstrip())
+    markdown = converter.text
+    markdown = markdown.replace(u'\u00A0', u' ') # replace nbsp with normal space
+    markdown = markdown.rstrip() # should I use strip() rather than rstrip()?
+
+    output.write(markdown.encode('utf-8'))
 
 
 class EnmlMarkdownConverter(sax.handler.ContentHandler):
