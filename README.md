@@ -35,9 +35,9 @@ I appreciate these libraries:
 
 Dependencies will be resolved automatically.
 
-Lisense
+License
 -------
-Baraag is distributed under the MIT Lisense.
+Baraag is distributed under the MIT License.
 
 
 Copyright (c) 2013 orangain &lt;orangain@gmail.com&gt;
