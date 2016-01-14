@@ -1,6 +1,9 @@
 Baraag [![Build Status](https://travis-ci.org/orangain/baraag.png)](https://travis-ci.org/orangain/baraag) [![Latest release](https://pypip.in/v/baraag/badge.png)](https://crate.io/packages/baraag)
 ==========================================================================================================
 
+**WARNING: This project is not maintained anymore. Baraag does not work with the current version of Evernote.app.**
+
+
 Baraag is a small server to preview Markdown-formatted note in Evernote with browser.
 
 ![Baraag](http://dl.dropbox.com/u/244073/baraag.png)
