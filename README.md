@@ -1,4 +1,4 @@
-Baraag [![Build Status](https://travis-ci.org/orangain/baraag.png)](https://travis-ci.org/orangain/baraag) [![Latest release](https://pypip.in/v/baraag/badge.png)](https://crate.io/packages/baraag)
+Baraag [![Build Status](https://travis-ci.org/orangain/baraag.png)](https://travis-ci.org/orangain/baraag) [![Latest release](https://img.shields.io/pypi/v/baraag.svg)](https://crate.io/packages/baraag)
 ==========================================================================================================
 
 **WARNING: This project is not maintained anymore. Baraag does not work with the current version of Evernote.app.**
